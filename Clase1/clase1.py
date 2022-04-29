@@ -1,9 +1,9 @@
 
-cafe = 0 
+cafe = 1 
 taza = 1 
 agua = 1 
 if (cafe==1  & taza==1 & agua==1): 
-    print("aca esta tu taza de cafe") 
+    print("aca esta tu taza de café") 
 else: 
     print("faltan ingredientes")
 

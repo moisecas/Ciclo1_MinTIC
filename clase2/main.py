@@ -61,6 +61,6 @@ num = 2
 print("el cuadrado es: ",num**2)
 print("el cubo es: ",num**3)
 print("el doble es: ",num*2)
-print("el triple es: ",num*3)
+print("el triple es: ",num*3) 
 
 
