@@ -1,29 +1,66 @@
 
-def calcularnota(n1,n2,n3,p1,p2,p3): #definimos la función con los parametros que va a recibir
-    return (n1*p1)+(n2*p2)+(n3*p3)#retornamos la nota final
+print("¡Bienvenido! En esta aplicación los estudiantes podrán gestionar las notas de su materia.")
+nombre=input("Por favor ingrese su nombre: ") #solicitamos el nombre del alumno
+materia1=input("Ingrese el nombre de la materia: ") #solicitamos el nombre de la materia
+n1=float(input("Ingrese la nota obtenida: ")) #solictamos al usuario las notas 
+p1=float(input("Ingrese el porcentaje de la nota: "))#solicitamos al usuario el promedio de la nota 1
+validacion1=input("¿Falta añadir notas? S/N: ") #solicitamos al usuario si desea ingresar otra nota
+if validacion1=="S": #si el usuario ingresa S, seguira el ciclo 
+    materia2=input("Ingrese el nombre de la materia: ")
+    n2=float(input("Ingrese la nota obtenida: "))
+    p2=float(input("Ingrese el porcentaje de la nota: "))
+    validacion2=input("¿Falta añadir notas? S/N: ")
+elif validacion1=="N": #si el usuario ingresa N, se rompe el ciclo
+    n2=float(input("Ingrese la nota obtenida: "))
+    p2=float(input("Ingrese el porcentaje de la nota: "))
+    validacion2=input("¿Falta añadir notas? S/N: ")   
+    if validacion2=="S":
+        materia3=input("Ingrese el nombre de la materia: ")
+        n3=float(input("Ingrese la nota obtenida: "))
+        p3=float(input("Ingrese el porcentaje de la nota: "))
+        validacion3=input("¿Falta añadir notas? S/N: ")
+    elif validacion2=="N":
+        n3=float(input("Ingrese la nota obtenida: "))
+        p3=float(input("Ingrese el porcentaje de la nota: "))
+        validacion3=input("¿Falta añadir notas? S/N: ")
+        if validacion3=="S":
+            materia4=input("Ingrese el nombre de la materia: ")
+            n4=float(input("Ingrese la nota obtenida: "))
+            p4=float(input("Ingrese el porcentaje de la nota: "))
+            
+sumapromedio=p1+p2+p3+p4 #sumamos los promedios
 
-nombre=input("escriba el nombre del alumno: ") #solicitamos el nombre del alumno
-n1=float(input("escriba la nota 1: ")) #solictamos al usuario las notas 
-p1=float(input("escriba promedio nota 1, por ejemplo si es 20%, escribe 0.20: "))#solicitamos al usuario el promedio de la nota 1
-n2=float(input("escriba la nota 2: "))
-p2=float(input("escriba promedio nota 2, por ejemplo si es 30%, escribe 0.30: "))
-n3=float(input("escriba la nota 3: "))
-p3=float(input("escriba promedio nota 3, por ejemplo si es 15%, escribe 0.15: "))
-sumapromedio=(p1+p2+p3) #sumamos los promedios
+while sumapromedio == 100: #si la suma de los promedios es igual a 100, seguira el ciclo
+    calcularnota=(n1*(p1/100))+(n2*(p2/100))+(n3*(p3/100)+n4*(p4/100)) #calculamos la nota final
+    print("Hola ",nombre,"La nota final es: ", calcularnota)#mostramos el resultado al usuario 
+    break #rompe el ciclo
 
-while sumapromedio < 1: #si la suma de los promedios es 1  
-    print("Debe volver a escribir las notas, asegurese de digitar bien los porcentajes de cada nota")
-    calcularnota(n1,n2,n3,p1,p2,p3) #volvemos a llamar a la función
-    n1=float(input("escriba la nota 1: "))
-    p1=float(input("escriba promedio nota 1, por ejemplo si es 20%, escribe 0.20: "))
-    n2=float(input("escriba la nota 2: "))
-    p2=float(input("escriba promedio nota 2, por ejemplo si es 30%, escribe 0.30: "))
-    n3=float(input("escriba la nota 3: "))
-    p3=float(input("escriba promedio nota 3, por ejemplo si es 15%, escribe 0.15: "))
-    sumapromedio=(p1+p2+p3) #sumamos los promedios nuevamente 
+while sumapromedio != 100: #si la suma de los promedios no es 100, seguira el ciclo 
+    print("La suma de los porcentajes no es 100")
+    materia1=input("Ingrese el nombre de la materia: ") #solicitamos el nombre de la materia
+    n1=float(input("Ingrese la nota obtenida: ")) #solictamos al usuario las notas 
+    p1=float(input("Ingrese el porcentaje de la nota: "))#solicitamos al usuario el promedio de la nota 1
+    validacion1=input("¿Falta añadir notas? S/N: ") #solicitamos al usuario si desea ingresar otra nota
+    if validacion1=="S": #si el usuario ingresa S, seguira el ciclo 
+        materia2=input("Ingrese el nombre de la materia: ")
+        n2=float(input("Ingrese la nota obtenida: "))
+        p2=float(input("Ingrese el porcentaje de la nota: "))
+        validacion2=input("¿Falta añadir notas? S/N: ")
+    if validacion2=="S":
+        materia3=input("Ingrese el nombre de la materia: ")
+        n3=float(input("Ingrese la nota obtenida: "))
+        p3=float(input("Ingrese el porcentaje de la nota: "))
+        validacion3=input("¿Falta añadir notas? S/N: ")
+        if validacion3=="S":
+            materia4=input("Ingrese el nombre de la materia: ")
+            n4=float(input("Ingrese la nota obtenida: "))
+            p4=float(input("Ingrese el porcentaje de la nota: "))
+    sumapromedio=p1+p2+p3+p4
 
-    notafinal=calcularnota(n1,n2,n3,p1,p2,p3) #invocamos la función con los parametros que le pasamos, recibidos en el input
-   
-    print("Hola ",nombre,"La nota final es: ", notafinal)#mostramos el resultado al usuario 
+
+    calcularnota=(n1*(p1/100))+(n2*(p2/100))+(n3*(p3/100)+n4*(p4/100)) #calculamos la nota final
+
+
+    print("Hola ",nombre,"La nota final es: ", calcularnota)#mostramos el resultado al usuario 
 
 
