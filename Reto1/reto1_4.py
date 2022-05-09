@@ -11,15 +11,17 @@ contador2=0
 
 
 while contador < 100 and validar=="S":
+    
     notas=float(input("Ingrese la nota obtenida: ")) #solictamos al usuario las notas
     promedio=int(input("Ingrese el porcentaje de la nota: "))
-    validar=input("¿Falta añadir notas? S/N: ")     
+    validar=input("¿Falta añadir notas? S/N: ")   
+    contador=promedio+contador  
     sumapromedio=promedio+contador
     nota=contador2+notas
     
     
     
-    if sumapromedio==100 or validar=="N":
+    if contador==100 or validar=="N":
         nota_final=nota*(sumapromedio/100)
         if nota_final<3:
         
