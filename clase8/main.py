@@ -125,3 +125,4 @@ if persona2!=persona:
   print("las personas son diferentes")
 else:
     print("coinciden las personas")
+
