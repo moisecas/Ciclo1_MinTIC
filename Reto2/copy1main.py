@@ -21,7 +21,8 @@ for sumapromedio in grupo:#recorremos la lista
 for estudiante in grupo:
     if estudiante["nota_fundamentos"]>promediofinal:
         print(estudiante["cedula"],estudiante["nombre"],estudiante["nota_fundamentos"])
-
+#mostrar en un diccionario promediofinal y estudiantes con mayor nota de fundamentos
+promediofinal={"promedio":promediofinal,"estudiantes":contadorestudiantes}
 
     #     for estudiante in grupo:#recorremos la lista
     # if estudiante["nota_fundamentos"]==max(grupo, key=lambda x: x["nota_fundamentos"])["nota_fundamentos"]:#condicion para mostrar los estudiantes con mayor promedio
